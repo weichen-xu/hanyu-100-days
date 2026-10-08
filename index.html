@@ -20,7 +20,7 @@
     --ink: #4A0E17;
     --jade: #0B7D62;
     --pink: #FF9EB5;
-    --display: 'Bagel Fat One', 'Baloo 2', system-ui, sans-serif;
+    --display: 'Bagel Fat One', 'ZCOOL KuaiLe', 'Baloo 2', system-ui, sans-serif;
     --body: 'Baloo 2', system-ui, sans-serif;
     --zh: 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   }
@@ -43,6 +43,15 @@
     background: radial-gradient(circle at 16px 16px, var(--butter) 15px, transparent 16px) 0 0 / 32px 16px repeat-x;
   }
   .hero > :not(.balloons) { position: relative; z-index: 1; }
+  .hero > .lang {
+    position: absolute; top: 12px; right: 12px; z-index: 2; display: flex; padding: 3px;
+    background: #fff; border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 3px 0 var(--red-deep);
+  }
+  .lang button {
+    font: 700 .95rem/1 var(--body); color: var(--ink); background: none; border: 0;
+    border-radius: 999px; padding: 7px 12px; cursor: pointer;
+  }
+  .lang button[aria-pressed=true] { background: var(--red); color: #fff; }
   .photo {
     position: relative; width: 136px; height: 136px; margin: 0 auto 18px; overflow: hidden;
     display: grid; place-items: center; border-radius: 50%;
@@ -195,55 +204,59 @@
     <i style="--x:86%;--c:var(--jade);--t:8.5s;--d:1.6s"></i>
     <i style="--x:58%;--c:var(--gold);--t:12s;--d:7s"></i>
   </div>
-  <div class="photo">
-    <span>Photo<br>coming soon</span>
-    <img src="baby.jpg" alt="Baby Han Yu" onerror="this.remove()">
+  <div class="lang" role="group" aria-label="Language 语言">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans">中文</button>
   </div>
-  <p class="invite">You're invited to celebrate</p>
+  <div class="photo">
+    <span data-i18n="photo">Photo<br>coming soon</span>
+    <img src="baby.jpg" alt="Baby Han Yu" data-i18n="photoAlt" data-i18n-attr="alt" onerror="this.remove()">
+  </div>
+  <p class="invite" data-i18n="invite">You're invited to celebrate</p>
   <p class="hundred"><span id="hundred" aria-hidden="true">100</span><span class="sr">100</span></p>
-  <p class="days">days of</p>
+  <p class="days" data-i18n="days">days of</p>
   <h1>Xu Han Yu</h1>
   <p class="zh" lang="zh">徐涵钰</p>
 </header>
 
 <main>
-  <p class="welcome">Come meet Han Yu, eat with us, and celebrate the first 100 days.</p>
+  <p class="welcome" data-i18n="welcome">Come meet Han Yu, eat with us, and celebrate the first 100 days.</p>
 
   <section class="sheet" aria-labelledby="details-title">
-    <h2 id="details-title">The details</h2>
+    <h2 id="details-title" data-i18n="details">The details</h2>
 
     <div class="row">
       <span class="ico" aria-hidden="true">📅</span>
       <div>
-        <h3>When</h3>
-        <p>Saturday 7 November 2026<br>11.30am onwards</p>
+        <h3 data-i18n="when">When</h3>
+        <p data-i18n="whenText">Saturday 7 November 2026<br>11.30am onwards</p>
       </div>
     </div>
 
     <div class="row">
       <span class="ico" aria-hidden="true">📍</span>
       <div>
-        <h3>Where</h3>
+        <h3 data-i18n="where">Where</h3>
         <p>Clubhouse Function Room (E1)<br>Rivercove Residences, Anchorvale Lane<br>Singapore 544584</p>
-        <a class="btn-small" href="https://maps.app.goo.gl/boYQVNCdkrrbjmGj9" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="btn-small" href="https://maps.app.goo.gl/boYQVNCdkrrbjmGj9" target="_blank" rel="noopener" data-i18n="maps">Open in Google Maps</a>
       </div>
     </div>
 
     <div class="row">
       <span class="ico" aria-hidden="true">🗺️</span>
       <div>
-        <h3>Finding the function room</h3>
+        <h3 data-i18n="finding">Finding the function room</h3>
       </div>
       <figure>
           <div class="map">
-            <img src="site-plan-entrance.webp" width="620" height="570"
+            <img src="site-plan-entrance.webp" data-i18n="mapAlt" data-i18n-attr="alt" width="620" height="570"
                  alt="Site plan of the Rivercove entrance. The guard house (A) is on Anchorvale Lane; the clubhouse function room (E1) is just past the entrance court, beside the family pool.">
-            <span class="pin left" style="--x:19.4%;--y:50.9%;--c:var(--jade)"><b>Guard house</b></span>
-            <span class="pin room" style="--x:50%;--y:27.2%;--c:var(--red)"><b>Function room</b></span>
+            <span class="pin left" style="--x:19.4%;--y:50.9%;--c:var(--jade)"><b data-i18n="pinGate">Guard house</b></span>
+            <span class="pin room" style="--x:50%;--y:27.2%;--c:var(--red)"><b data-i18n="pinRoom">Function room</b></span>
           </div>
           <figcaption>
-            Enter at the guard house (A) on Anchorvale Lane. The clubhouse (E) is just past the entrance court (B), beside the family pool, and the function room is E1.
-            <a href="site-plan.webp" target="_blank" rel="noopener">See the full site plan</a>
+            <span data-i18n="caption">Enter at the guard house (A) on Anchorvale Lane. The clubhouse (E) is just past the entrance court (B), beside the family pool, and the function room is E1.</span>
+            <a href="site-plan.webp" target="_blank" rel="noopener" data-i18n="fullPlan">See the full site plan</a>
           </figcaption>
       </figure>
     </div>
@@ -251,70 +264,70 @@
     <div class="row">
       <span class="ico" aria-hidden="true">🚗</span>
       <div>
-        <h3>Driving</h3>
-        <p>Guest parking is available. Let the guard know you're going to the Clubhouse Function Room.</p>
+        <h3 data-i18n="driving">Driving</h3>
+        <p data-i18n="drivingText">Guest parking is available. Let the guard know you're going to the Clubhouse Function Room.</p>
       </div>
     </div>
 
     <div class="row">
       <span class="ico" aria-hidden="true">🚆</span>
       <div>
-        <h3>By train</h3>
-        <p>The nearest LRT is Tongkang, on the Sengkang LRT West Loop.</p>
-        <p>The nearest MRT is Sengkang (North East Line). Change to the LRT there.</p>
+        <h3 data-i18n="train">By train</h3>
+        <p data-i18n="lrt">The nearest LRT is Tongkang, on the Sengkang LRT West Loop.</p>
+        <p data-i18n="mrt">The nearest MRT is Sengkang (North East Line). Change to the LRT there.</p>
       </div>
     </div>
   </section>
 
   <section class="sheet" id="rsvp" aria-labelledby="rsvp-title">
-    <h2 id="rsvp-title">Will you join us?</h2>
-    <p>Please reply by Friday 30 October.</p>
+    <h2 id="rsvp-title" data-i18n="rsvpTitle">Will you join us?</h2>
+    <p data-i18n="replyBy">Please reply by Friday 30 October.</p>
 
     <form id="form">
       <div class="field">
-        <label for="name">Your name</label>
+        <label for="name" data-i18n="nameLabel">Your name</label>
         <input type="text" id="name" name="name" required maxlength="80" autocomplete="name">
       </div>
 
       <fieldset class="field">
-        <legend>Can you make it?</legend>
+        <legend data-i18n="attendLegend">Can you make it?</legend>
         <div class="choices">
-          <label class="choice"><input type="radio" name="attending" value="Yes" required><span>Yes, I'll be there</span></label>
-          <label class="choice"><input type="radio" name="attending" value="Maybe"><span>Maybe</span></label>
-          <label class="choice"><input type="radio" name="attending" value="No"><span>Sorry, I can't make it</span></label>
+          <label class="choice"><input type="radio" name="attending" value="Yes" required><span data-i18n="optYes">Yes, I'll be there</span></label>
+          <label class="choice"><input type="radio" name="attending" value="Maybe"><span data-i18n="optMaybe">Maybe</span></label>
+          <label class="choice"><input type="radio" name="attending" value="No"><span data-i18n="optNo">Sorry, I can't make it</span></label>
         </div>
       </fieldset>
 
       <fieldset id="going">
         <div class="field">
-          <label for="count">How many of you are coming, including you?</label>
+          <label for="count" data-i18n="countLabel">How many of you are coming, including you?</label>
           <div class="stepper">
-            <button type="button" data-step="-1" aria-label="One fewer person">−</button>
+            <button type="button" data-step="-1" aria-label="One fewer person" data-i18n="stepDown" data-i18n-attr="aria-label">−</button>
             <input type="number" id="count" name="count" value="1" min="1" max="20" inputmode="numeric">
-            <button type="button" data-step="1" aria-label="One more person">+</button>
+            <button type="button" data-step="1" aria-label="One more person" data-i18n="stepUp" data-i18n-attr="aria-label">+</button>
           </div>
         </div>
 
         <fieldset class="field">
-          <legend>Any dietary needs in your group?</legend>
-          <p class="hint">Tick any that apply.</p>
+          <legend data-i18n="dietLegend">Any dietary needs in your group?</legend>
+          <p class="hint" data-i18n="dietHint">Tick any that apply.</p>
           <div class="chips">
-            <label class="choice"><input type="checkbox" name="diet" value="Vegetarian"><span>Vegetarian</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="Halal"><span>Halal</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="No beef"><span>No beef</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="No pork"><span>No pork</span></label>
+            <label class="choice"><input type="checkbox" name="diet" value="Vegetarian"><span data-i18n="veg">Vegetarian</span></label>
+            <label class="choice"><input type="checkbox" name="diet" value="Halal"><span data-i18n="halal">Halal</span></label>
+            <label class="choice"><input type="checkbox" name="diet" value="No beef"><span data-i18n="noBeef">No beef</span></label>
+            <label class="choice"><input type="checkbox" name="diet" value="No pork"><span data-i18n="noPork">No pork</span></label>
           </div>
         </fieldset>
 
         <div class="field">
-          <label for="notes">Allergies or anything else we should know?</label>
+          <label for="notes" data-i18n="notesLabel">Allergies or anything else we should know?</label>
           <input type="text" id="notes" name="notes" maxlength="300">
         </div>
       </fieldset>
 
       <div class="field">
-        <label for="email">Email (optional)</label>
-        <p class="hint">We'll send you a confirmation with all the details.</p>
+        <label for="email" data-i18n="emailLabel">Email (optional)</label>
+        <p class="hint" data-i18n="emailHint">We'll send you a confirmation with all the details.</p>
         <input type="email" id="email" name="email" maxlength="120" autocomplete="email">
       </div>
 
@@ -332,7 +345,7 @@
     <p id="t-body"></p>
     <p class="note" id="t-unit"></p>
     <p id="t-email"></p>
-    <button type="button" class="link-btn" id="again">Change my RSVP</button>
+    <button type="button" class="link-btn" id="again" data-i18n="again">Change my RSVP</button>
   </section>
 </main>
 
@@ -341,6 +354,78 @@
 <script>
   // Paste the Google Apps Script web app URL (ends in /exec) here after deploying.
   const ENDPOINT = 'https://script.google.com/macros/s/AKfycbweOccw93RNNESIbX5_5XWifKBWZ91LpkbA4Ol1kOWHiaOiQYRZOnXGpsrpFotM6sV4/exec';
+
+  // Static text carries data-i18n keys; its English is read from the page itself, so only Chinese lives here.
+  const ZH = {
+    title: '诚邀您参加：涵钰的百日宴',
+    photo: '照片<br>即将上传',
+    photoAlt: '涵钰宝宝',
+    invite: '诚邀您一同庆祝',
+    days: '天',
+    welcome: '欢迎来看看涵钰，和我们一起吃饭，一起庆祝这第一个100天！',
+    details: '活动详情',
+    when: '时间',
+    whenText: '2026年11月7日（星期六）<br>上午11:30开始',
+    where: '地点',
+    maps: '在 Google 地图中打开',
+    finding: '如何找到功能厅',
+    mapAlt: 'Rivercove 入口平面图。警卫室 (A) 位于 Anchorvale Lane；会所功能厅 (E1) 就在入口庭院后面，紧邻家庭泳池。',
+    pinGate: '警卫室',
+    pinRoom: '功能厅',
+    caption: '从 Anchorvale Lane 的警卫室 (A) 进入。会所 (E) 就在入口庭院 (B) 后面，紧邻家庭泳池，功能厅是 E1。',
+    fullPlan: '查看完整平面图',
+    driving: '开车',
+    drivingText: '设有访客停车位。请告诉警卫您要去会所功能厅（Clubhouse Function Room）。',
+    train: '公共交通',
+    lrt: '最近的轻轨站是同港站 Tongkang（SW7，盛港轻轨线）。',
+    mrt: '最近的地铁站是盛港站 Sengkang（NE16，东北线），可在该站转乘轻轨。',
+    rsvpTitle: '您能来吗？',
+    replyBy: '请于10月30日（星期五）前回复。',
+    nameLabel: '您的姓名',
+    attendLegend: '能出席吗？',
+    optYes: '能，我会来！',
+    optMaybe: '还不确定',
+    optNo: '抱歉，无法出席',
+    countLabel: '共几位出席（包括您自己）？',
+    stepDown: '减少一位',
+    stepUp: '增加一位',
+    dietLegend: '同行者有饮食要求吗？',
+    dietHint: '可多选。',
+    veg: '素食',
+    halal: '清真',
+    noBeef: '不吃牛肉',
+    noPork: '不吃猪肉',
+    notesLabel: '有过敏或其他需要我们注意的事项吗？',
+    emailLabel: '电邮（可选）',
+    emailHint: '我们会把确认邮件和活动详情发送给您。',
+    again: '修改我的回复',
+    // Used from the script below
+    send: '提交回复',
+    sending: '提交中…',
+    failed: '回复未能提交。请检查网络连接，然后再点一次“提交回复”。',
+    invalid: '提交失败，请检查填写的内容后再试。',
+    who: n => (n === 1 ? '您' : `您一行${n}位`),
+    Yes: (name, n) => ['11月7日见！', `谢谢您，${name}！我们已为${ZH.who(n)}预留座位。`],
+    Maybe: (name, n) => ['谢谢告知！', `我们先为${ZH.who(n)}留个位置。确定后请再提交一次。`],
+    No: name => ['很遗憾您无法出席！', `谢谢告知，${name}。`],
+    unit: u => `开车前来？请告诉警卫您要去会所功能厅（Clubhouse Function Room）。如被问到门牌号，请说拜访 ${u}。`,
+    emailed: e => `确认邮件已发送至 ${e}。`,
+    notEmailed: '确认邮件未能发送，但您的回复已保存。',
+  };
+  const EN = {
+    send: 'Send RSVP',
+    sending: 'Sending…',
+    failed: "Your RSVP didn't send. Check your internet connection and tap Send RSVP again.",
+    Yes: (name, n) => ['See you on 7 Nov!', `Thank you, ${name}. We've saved ${n === 1 ? 'a spot for you' : 'spots for your group of ' + n}.`],
+    Maybe: (name, n) => ['Thanks for letting us know!', `We've pencilled ${n === 1 ? 'you in' : 'in your group of ' + n}. When you know for sure, send your RSVP again.`],
+    No: name => ["We'll miss you!", `Thanks for letting us know, ${name}.`],
+    unit: u => `Driving? Tell the guard you're going to the Clubhouse Function Room. If they ask for a unit, you're visiting ${u}.`,
+    emailed: e => `A confirmation is on its way to ${e}.`,
+    notEmailed: "We couldn't send the confirmation email, but your RSVP is saved.",
+  };
+  let lang = 'en';
+  let lastThanks = null;
+  const tr = () => (lang === 'zh' ? ZH : EN);
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = id => document.getElementById(id);
@@ -356,6 +441,29 @@
       if (p === 1) { clearInterval(tick); num.parentElement.classList.add('pop'); }
     }, 30);
   }
+
+  const i18n = [...document.querySelectorAll('[data-i18n]')];
+  i18n.forEach(el => { el.dataset.en = el.dataset.i18nAttr ? el.getAttribute(el.dataset.i18nAttr) : el.innerHTML; });
+  const enTitle = document.title;
+
+  function setLang(l) {
+    lang = l;
+    for (const el of i18n) {
+      const v = l === 'zh' ? ZH[el.dataset.i18n] : el.dataset.en;
+      if (el.dataset.i18nAttr) el.setAttribute(el.dataset.i18nAttr, v);
+      else el.innerHTML = v;
+    }
+    document.documentElement.lang = l === 'zh' ? 'zh-Hans' : 'en';
+    document.title = l === 'zh' ? ZH.title : enTitle;
+    document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
+    const btn = form.querySelector('.send');
+    if (!btn.disabled) btn.textContent = tr().send;
+    // Keep the choice in the address bar, so a refresh or a shared ?lang=zh link opens in Chinese.
+    history.replaceState(null, '', l === 'zh' ? '?lang=zh' : location.pathname);
+    if (lastThanks) renderThanks(...lastThanks);
+  }
+  document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  if (new URLSearchParams(location.search).get('lang') === 'zh') setLang('zh');
 
   // Hide party size and dietary questions for a "no".
   form.addEventListener('change', e => {
@@ -377,38 +485,34 @@
     const btn = form.querySelector('.send');
     $('error').textContent = '';
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = tr().sending;
     try {
       if (!ENDPOINT) throw new Error('ENDPOINT not set');
       // A string body is sent as text/plain, which Apps Script accepts without a CORS preflight.
       const res = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(data) });
       const out = await res.json();
       if (out.ok) showThanks(data, out);
-      else $('error').textContent = out.error;
+      else $('error').textContent = lang === 'zh' ? ZH.invalid : out.error;
     } catch (err) {
-      $('error').textContent = "Your RSVP didn't send. Check your internet connection and tap Send RSVP again.";
+      $('error').textContent = tr().failed;
     } finally {
       btn.disabled = false;
-      btn.textContent = 'Send RSVP';
+      btn.textContent = tr().send;
     }
   });
 
+  function renderThanks(d, out) {
+    const t = tr();
+    const [title, body] = t[d.attending](d.name.trim(), Number(d.count) || 1);
+    $('t-title').textContent = title;
+    $('t-body').textContent = body;
+    $('t-unit').textContent = out.unit ? t.unit(out.unit.replace(/ /g, '\u00a0')) : '';
+    $('t-email').textContent = !d.email ? '' : out.emailed ? t.emailed(d.email) : t.notEmailed;
+  }
+
   function showThanks(d, out) {
-    const n = Number(d.count) || 1;
-    const spots = n === 1 ? 'a spot for you' : 'spots for your group of ' + n;
-    const copy = {
-      Yes: ['See you on 7 Nov!', `Thank you, ${d.name.trim()}. We've saved ${spots}.`],
-      Maybe: ['Thanks for letting us know!', `We've pencilled ${n === 1 ? 'you in' : 'in your group of ' + n}. When you know for sure, send your RSVP again.`],
-      No: ["We'll miss you!", `Thanks for letting us know, ${d.name.trim()}.`],
-    }[d.attending];
-    $('t-title').textContent = copy[0];
-    $('t-body').textContent = copy[1];
-    $('t-unit').textContent = out.unit
-      ? `Driving? Tell the guard you're going to the Clubhouse Function Room. If they ask for a unit, you're visiting ${out.unit.replace(/ /g, ' ')}.`
-      : '';
-    $('t-email').textContent = !d.email ? ''
-      : out.emailed ? `A confirmation is on its way to ${d.email}.`
-      : "We couldn't send the confirmation email, but your RSVP is saved.";
+    lastThanks = [d, out];
+    renderThanks(d, out);
     $('rsvp').hidden = true;
     $('thanks').hidden = false;
     $('thanks').focus();
@@ -417,6 +521,7 @@
   }
 
   $('again').addEventListener('click', () => {
+    lastThanks = null;
     $('thanks').hidden = true;
     $('rsvp').hidden = false;
     $('rsvp').scrollIntoView({ block: 'start' });
