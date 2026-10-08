@@ -35,7 +35,7 @@
   /* Hero: red-packet red with a faint gold dot pattern, scalloped bottom edge */
   .hero {
     position: relative; overflow: hidden; text-align: center; color: #fff;
-    padding: 44px 16px 64px;
+    padding: 76px 16px 64px;
     background: radial-gradient(circle, rgba(255, 201, 60, .18) 2px, transparent 2.5px) 0 0 / 22px 22px, var(--red);
   }
   .hero::after {
@@ -52,13 +52,6 @@
     border-radius: 999px; padding: 7px 12px; cursor: pointer;
   }
   .lang button[aria-pressed=true] { background: var(--red); color: #fff; }
-  .photo {
-    position: relative; width: 136px; height: 136px; margin: 0 auto 18px; overflow: hidden;
-    display: grid; place-items: center; border-radius: 50%;
-    background: var(--butter); border: 6px solid var(--gold); box-shadow: 0 6px 0 var(--red-deep);
-    color: var(--red); font-weight: 700; font-size: .9rem; line-height: 1.15;
-  }
-  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .invite { font-size: 1.2rem; font-weight: 600; }
   .hundred {
     font: 400 clamp(6.5rem, 34vw, 10rem)/.95 var(--display); color: var(--gold);
@@ -208,10 +201,6 @@
     <button type="button" data-lang="en" aria-pressed="true">EN</button>
     <button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans">中文</button>
   </div>
-  <div class="photo">
-    <span data-i18n="photo">Photo<br>coming soon</span>
-    <img src="baby.jpg" alt="Baby Han Yu" data-i18n="photoAlt" data-i18n-attr="alt" onerror="this.remove()">
-  </div>
   <p class="invite" data-i18n="invite">You're invited to celebrate</p>
   <p class="hundred"><span id="hundred" aria-hidden="true">100</span><span class="sr">100</span></p>
   <p class="days" data-i18n="days">days of</p>
@@ -358,8 +347,6 @@
   // Static text carries data-i18n keys; its English is read from the page itself, so only Chinese lives here.
   const ZH = {
     title: '诚邀您参加：涵钰的百日宴',
-    photo: '照片<br>即将上传',
-    photoAlt: '涵钰宝宝',
     invite: '诚邀您一同庆祝',
     days: '天',
     welcome: '欢迎来看看涵钰，和我们一起吃饭，一起庆祝这第一个100天！',
