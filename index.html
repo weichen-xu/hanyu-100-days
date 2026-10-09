@@ -1,533 +1,769 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>You're invited: Han Yu's 100th Day</title>
-<meta property="og:title" content="You're invited: Han Yu's 100th Day">
-<meta property="og:description" content="Sat 7 Nov 2026, from 11.30am at Rivercove Residences. Please RSVP by 30 Oct.">
-<meta name="theme-color" content="#D7192A">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+2:wght@500;600;700;800&family=ZCOOL+KuaiLe&display=swap">
-<style>
-  :root {
-    --red: #D7192A;
-    --red-deep: #8F0F1B;
-    --gold: #FFC93C;
-    --butter: #FFF3CC;
-    --ink: #4A0E17;
-    --jade: #0B7D62;
-    --pink: #FF9EB5;
-    --display: 'Bagel Fat One', 'ZCOOL KuaiLe', 'Baloo 2', system-ui, sans-serif;
-    --body: 'Baloo 2', system-ui, sans-serif;
-    --zh: 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--butter); color: var(--ink); font: 500 1.0625rem/1.5 var(--body); }
-  h2, h3, p { margin: 0; }
-  a { color: var(--red); font-weight: 700; }
-  :focus-visible { outline: 3px solid var(--jade); outline-offset: 3px; }
-  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Han Yu's 100th Day Celebration</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Baby Han Yu's 100th Day Celebration">
+    <meta property="og:description" content="Saturday 7 November 2026 at Rivercove Residences. Please RSVP.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        .font-display { font-family: 'Baloo 2', cursive; }
+        
+        /* Background Pattern */
+        .bg-pattern {
+            background-color: #fdf2f8;
+            background-image: radial-gradient(#fbcfe8 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
 
-  /* Hero: red-packet red with a faint gold dot pattern, scalloped bottom edge */
-  .hero {
-    position: relative; overflow: hidden; text-align: center; color: #fff;
-    padding: 76px 16px 64px;
-    background: radial-gradient(circle, rgba(255, 201, 60, .18) 2px, transparent 2.5px) 0 0 / 22px 22px, var(--red);
-  }
-  .hero::after {
-    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 16px;
-    background: radial-gradient(circle at 16px 16px, var(--butter) 15px, transparent 16px) 0 0 / 32px 16px repeat-x;
-  }
-  .hero > :not(.balloons) { position: relative; z-index: 1; }
-  .hero > .lang {
-    position: absolute; top: 12px; right: 12px; z-index: 2; display: flex; padding: 3px;
-    background: #fff; border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 3px 0 var(--red-deep);
-  }
-  .lang button {
-    font: 700 .95rem/1 var(--body); color: var(--ink); background: none; border: 0;
-    border-radius: 999px; padding: 7px 12px; cursor: pointer;
-  }
-  .lang button[aria-pressed=true] { background: var(--red); color: #fff; }
-  .invite { font-size: 1.2rem; font-weight: 600; }
-  .hundred {
-    font: 400 clamp(6.5rem, 34vw, 10rem)/.95 var(--display); color: var(--gold);
-    text-shadow: 0 7px 0 var(--red-deep); margin-top: 4px;
-  }
-  .hundred.pop { animation: pop .55s cubic-bezier(.3, 1.7, .5, 1); }
-  .days { font-size: 1.35rem; font-weight: 700; margin-top: 2px; }
-  h1 { margin: 0; font: 400 clamp(2.5rem, 12vw, 3.5rem)/1.05 var(--display); }
-  .zh { margin-top: 8px; font: 400 2rem/1.25 var(--zh); color: var(--gold); letter-spacing: .12em; }
+        /* Subtle Floating Animations for Decor */
+        .float-slow { animation: float 8s ease-in-out infinite; }
+        .float-medium { animation: float 6s ease-in-out infinite; }
+        .float-fast { animation: float 4s ease-in-out infinite; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
 
-  .balloons i {
-    position: absolute; bottom: -150px; left: var(--x); width: 54px; height: 66px;
-    border-radius: 50% 50% 47% 53% / 58% 58% 42% 42%;
-    background: radial-gradient(circle at 32% 30%, rgba(255, 255, 255, .6) 0 6px, transparent 7px), var(--c);
-    animation: rise var(--t) linear var(--d) infinite;
-  }
-  .balloons i::before {
-    content: ""; position: absolute; top: calc(100% - 1px); left: calc(50% - 5px);
-    border: 5px solid transparent; border-top: 0; border-bottom: 7px solid var(--c);
-  }
-  .balloons i::after {
-    content: ""; position: absolute; top: calc(100% + 6px); left: 50%; width: 1.5px; height: 70px;
-    background: rgba(255, 255, 255, .55);
-  }
+        /* Continuous Soft Pulse for Important Elements */
+        .soft-pulse { animation: softPulse 2.5s infinite; }
+        @keyframes softPulse {
+            0% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(244, 114, 182, 0.1); }
+            50% { transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(244, 114, 182, 0.3); }
+            100% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(244, 114, 182, 0.1); }
+        }
 
-  main { max-width: 560px; margin: 0 auto; padding: 12px 16px 72px; }
-  .welcome { text-align: center; font-size: 1.15rem; font-weight: 600; margin: 4px 0 28px; }
-  .sheet {
-    background: #fff; border: 3px solid var(--ink); border-radius: 24px;
-    box-shadow: 6px 6px 0 var(--red); padding: 22px 20px; margin-bottom: 32px;
-  }
-  .sheet > h2 { font: 400 1.9rem/1.1 var(--display); color: var(--red); margin-bottom: 6px; }
+        /* Scroll Reveal Animation Classes (Triggered by JS) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-  /* Event details: one row per question a guest asks (when, where, how) */
-  .row { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 14px 0; }
-  .row + .row { border-top: 2px dotted var(--gold); }
-  .ico {
-    width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-    background: var(--butter); font-size: 1.35rem;
-  }
-  .row h3 { font-size: 1.05rem; font-weight: 800; color: var(--red); line-height: 1.3; }
-  .row p + p { margin-top: 6px; }
-  .btn-small {
-    display: inline-block; margin-top: 10px; padding: 6px 16px; border-radius: 999px;
-    background: var(--gold); color: var(--ink); text-decoration: none;
-    border: 2.5px solid var(--ink); box-shadow: 0 4px 0 var(--ink);
-  }
-  .btn-small:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+        /* Staggered transition delays for grid items */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
 
-  .row figure { grid-column: 1 / -1; margin: 0; }
-  .map { position: relative; border: 3px solid var(--ink); border-radius: 16px; overflow: hidden; }
-  .map img { display: block; width: 100%; height: auto; }
-  .pin { position: absolute; left: var(--x); top: var(--y); width: 0; height: 0; }
-  .pin::before {
-    content: ""; position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%;
-    background: var(--c); border: 3px solid #fff;
-  }
-  .pin.room::before { animation: pulse 1.6s ease-out infinite; }
-  .pin b {
-    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
-    background: var(--c); color: #fff; font-size: .85rem; font-weight: 700; line-height: 1;
-    padding: 6px 10px; border-radius: 999px; border: 2px solid #fff;
-  }
-  .pin.left b { left: -18px; transform: none; }
-  figcaption { font-size: .95rem; margin-top: 8px; }
+        /* Gentle Shimmer for the AI Button */
+        .shimmer {
+            background: linear-gradient(90deg, #ec4899, #a855f7, #ec4899);
+            background-size: 200% auto;
+            animation: shimmerEffect 3s linear infinite;
+        }
+        @keyframes shimmerEffect {
+            to { background-position: 200% center; }
+        }
 
-  /* RSVP form */
-  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
-  .field { margin-top: 22px; }
-  .field > label, legend { display: block; font-weight: 800; margin-bottom: 8px; padding: 0; }
-  .hint { font-size: .95rem; margin: -4px 0 8px; }
-  input[type=text], input[type=email], input[type=number] {
-    width: 100%; font: inherit; color: var(--ink); background: #fff;
-    border: 3px solid var(--ink); border-radius: 14px; padding: 10px 14px; min-height: 50px;
-  }
-  .choices { display: grid; gap: 10px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .choice { position: relative; cursor: pointer; }
-  .choice input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-  .choice span {
-    display: block; border: 3px solid var(--ink); border-radius: 999px; background: #fff;
-    padding: 10px 18px; font-weight: 700; box-shadow: 0 4px 0 var(--ink);
-    transition: transform .08s, box-shadow .08s, background-color .15s;
-  }
-  .chips .choice span { padding: 6px 16px; }
-  .choice input:checked + span { background: var(--red); color: #fff; }
-  .chips .choice input:checked + span { background: var(--jade); }
-  .choice input:checked + span::before { content: "✓ "; }
-  .choice input:active + span { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
-  .choice input:focus-visible + span { outline: 3px solid var(--jade); outline-offset: 3px; }
+        /* Keyframes used by the animate-[fadeIn...] and animate-[slideUp...] classes */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
 
-  .stepper { display: flex; gap: 10px; align-items: center; }
-  .stepper input { width: 84px; text-align: center; font-weight: 800; font-size: 1.3rem; -moz-appearance: textfield; }
-  .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; }
-  .stepper button {
-    width: 50px; height: 50px; border-radius: 50%; font: 400 1.6rem/1 var(--display); color: var(--ink);
-    background: var(--gold); border: 3px solid var(--ink); box-shadow: 0 4px 0 var(--ink); cursor: pointer;
-  }
-  .stepper button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+        /* Site plan close-up with pins on the guard house and the function room */
+        .map { position: relative; border-radius: 1rem; overflow: hidden; border: 2px solid #fbcfe8; }
+        .map img { display: block; width: 100%; height: auto; }
+        .pin { position: absolute; left: var(--x); top: var(--y); width: 0; height: 0; }
+        .pin::before {
+            content: ""; position: absolute; left: -9px; top: -9px; width: 18px; height: 18px;
+            border-radius: 50%; background: var(--c); border: 3px solid #fff;
+        }
+        .pin.room::before { animation: pinPulse 1.6s ease-out infinite; }
+        .pin b {
+            position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+            background: var(--c); color: #fff; font-size: .8rem; font-weight: 700; line-height: 1;
+            padding: 6px 10px; border-radius: 999px; border: 2px solid #fff;
+        }
+        .pin.left b { left: -12px; transform: none; }
+        @keyframes pinPulse { 0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, .7); } 100% { box-shadow: 0 0 0 16px rgba(236, 72, 153, 0); } }
 
-  .hp { position: absolute; left: -9999px; }
-  .send {
-    width: 100%; margin-top: 28px; padding: 14px; cursor: pointer;
-    font: 400 1.5rem/1.2 var(--display); color: #fff; background: var(--red);
-    border: 3px solid var(--ink); border-radius: 18px; box-shadow: 0 6px 0 var(--ink);
-    transition: transform .08s, box-shadow .08s;
-  }
-  .send:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--ink); }
-  .send:disabled { opacity: .7; cursor: wait; }
-  .error { color: var(--red); font-weight: 700; margin-top: 14px; }
-  .error:empty, .thanks p:empty { display: none; }
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after { animation: none !important; transition: none !important; }
+        }
 
-  .thanks { text-align: center; }
-  .thanks > h2 { font-size: 2.2rem; }
-  .thanks p { margin-top: 10px; }
-  .thanks .note { background: var(--butter); border-radius: 14px; padding: 12px 14px; text-align: left; }
-  .link-btn { margin-top: 18px; font: inherit; font-weight: 700; color: var(--red); background: none; border: 0; text-decoration: underline; cursor: pointer; }
-
-  #confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 10; }
-  #confetti i { position: absolute; top: -20px; width: 9px; height: 14px; animation: fall linear forwards; }
-
-  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.18) rotate(-3deg); } 100% { transform: scale(1); } }
-  @keyframes rise {
-    0% { transform: translate(0, 0) rotate(-5deg); }
-    50% { transform: translate(18px, -420px) rotate(5deg); }
-    100% { transform: translate(-6px, -880px) rotate(-5deg); }
-  }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(215, 25, 42, .7); } 100% { box-shadow: 0 0 0 16px rgba(215, 25, 42, 0); } }
-  @keyframes fall { to { transform: translate(var(--dx), 110vh) rotate(var(--rot)); } }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after { animation: none !important; transition: none !important; }
-    .balloons { display: none; }
-  }
-</style>
+        /* Custom Radio Button styling for smooth transitions */
+        .radio-custom:checked + div {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
-<body>
-<header class="hero">
-  <div class="balloons" aria-hidden="true">
-    <i style="--x:4%;--c:var(--gold);--t:9s;--d:1.4s"></i>
-    <i style="--x:16%;--c:var(--pink);--t:11s;--d:4.5s"></i>
-    <i style="--x:72%;--c:#fff;--t:10s;--d:2.2s"></i>
-    <i style="--x:86%;--c:var(--jade);--t:8.5s;--d:1.6s"></i>
-    <i style="--x:58%;--c:var(--gold);--t:12s;--d:7s"></i>
-  </div>
-  <div class="lang" role="group" aria-label="Language 语言">
-    <button type="button" data-lang="en" aria-pressed="true">EN</button>
-    <button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans">中文</button>
-  </div>
-  <p class="invite" data-i18n="invite">You're invited to celebrate</p>
-  <p class="hundred"><span id="hundred" aria-hidden="true">100</span><span class="sr">100</span></p>
-  <p class="days" data-i18n="days">days of</p>
-  <h1>Xu Han Yu</h1>
-  <p class="zh" lang="zh">徐涵钰</p>
-</header>
+<body class="bg-pattern min-h-screen text-gray-800 pb-12 overflow-x-hidden">
 
-<main>
-  <p class="welcome" data-i18n="welcome">Come meet Han Yu, eat with us, and celebrate the first 100 days.</p>
+    <!-- Floating Background Decor (z-index 0) -->
+    <div class="fixed top-10 left-10 text-4xl float-slow opacity-60 z-0 pointer-events-none">🎈</div>
+    <div class="fixed top-32 right-10 text-4xl float-medium opacity-60 z-0 pointer-events-none" style="animation-delay: 1s;">✨</div>
+    <div class="fixed bottom-20 left-10 md:left-20 text-5xl float-fast opacity-50 z-0 pointer-events-none" style="animation-delay: 2s;">🧸</div>
+    <div class="fixed top-1/2 right-10 md:right-20 text-4xl float-medium opacity-60 z-0 pointer-events-none" style="animation-delay: 1.5s;">🍼</div>
+    <div class="fixed bottom-40 right-1/4 text-3xl float-slow opacity-40 z-0 pointer-events-none" style="animation-delay: 0.5s;">🌟</div>
 
-  <section class="sheet" aria-labelledby="details-title">
-    <h2 id="details-title" data-i18n="details">The details</h2>
-
-    <div class="row">
-      <span class="ico" aria-hidden="true">📅</span>
-      <div>
-        <h3 data-i18n="when">When</h3>
-        <p data-i18n="whenText">Saturday 7 November 2026<br>11.30am onwards</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="ico" aria-hidden="true">📍</span>
-      <div>
-        <h3 data-i18n="where">Where</h3>
-        <p>Clubhouse Function Room (E1)<br>Rivercove Residences, Anchorvale Lane<br>Singapore 544584</p>
-        <a class="btn-small" href="https://maps.app.goo.gl/boYQVNCdkrrbjmGj9" target="_blank" rel="noopener" data-i18n="maps">Open in Google Maps</a>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="ico" aria-hidden="true">🗺️</span>
-      <div>
-        <h3 data-i18n="finding">Finding the function room</h3>
-      </div>
-      <figure>
-          <div class="map">
-            <img src="site-plan-entrance.webp" data-i18n="mapAlt" data-i18n-attr="alt" width="620" height="570"
-                 alt="Site plan of the Rivercove entrance. The guard house (A) is on Anchorvale Lane; the clubhouse function room (E1) is just past the entrance court, beside the family pool.">
-            <span class="pin left" style="--x:19.4%;--y:50.9%;--c:var(--jade)"><b data-i18n="pinGate">Guard house</b></span>
-            <span class="pin room" style="--x:50%;--y:27.2%;--c:var(--red)"><b data-i18n="pinRoom">Function room</b></span>
-          </div>
-          <figcaption>
-            <span data-i18n="caption">Enter at the guard house (A) on Anchorvale Lane. The clubhouse (E) is just past the entrance court (B), beside the family pool, and the function room is E1.</span>
-            <a href="site-plan.webp" target="_blank" rel="noopener" data-i18n="fullPlan">See the full site plan</a>
-          </figcaption>
-      </figure>
-    </div>
-
-    <div class="row">
-      <span class="ico" aria-hidden="true">🚗</span>
-      <div>
-        <h3 data-i18n="driving">Driving</h3>
-        <p data-i18n="drivingText">Guest parking is available. Let the guard know you're going to the Clubhouse Function Room.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="ico" aria-hidden="true">🚆</span>
-      <div>
-        <h3 data-i18n="train">By train</h3>
-        <p data-i18n="lrt">The nearest LRT is Tongkang, on the Sengkang LRT West Loop.</p>
-        <p data-i18n="mrt">The nearest MRT is Sengkang (North East Line). Change to the LRT there.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sheet" id="rsvp" aria-labelledby="rsvp-title">
-    <h2 id="rsvp-title" data-i18n="rsvpTitle">Will you join us?</h2>
-    <p data-i18n="replyBy">Please reply by Friday 30 October.</p>
-
-    <form id="form">
-      <div class="field">
-        <label for="name" data-i18n="nameLabel">Your name</label>
-        <input type="text" id="name" name="name" required maxlength="80" autocomplete="name">
-      </div>
-
-      <fieldset class="field">
-        <legend data-i18n="attendLegend">Can you make it?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="attending" value="Yes" required><span data-i18n="optYes">Yes, I'll be there</span></label>
-          <label class="choice"><input type="radio" name="attending" value="Maybe"><span data-i18n="optMaybe">Maybe</span></label>
-          <label class="choice"><input type="radio" name="attending" value="No"><span data-i18n="optNo">Sorry, I can't make it</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset id="going">
-        <div class="field">
-          <label for="count" data-i18n="countLabel">How many of you are coming, including you?</label>
-          <div class="stepper">
-            <button type="button" data-step="-1" aria-label="One fewer person" data-i18n="stepDown" data-i18n-attr="aria-label">−</button>
-            <input type="number" id="count" name="count" value="1" min="1" max="20" inputmode="numeric">
-            <button type="button" data-step="1" aria-label="One more person" data-i18n="stepUp" data-i18n-attr="aria-label">+</button>
-          </div>
+    <div class="max-w-2xl mx-auto pt-8 px-4 relative z-10">
+        
+        <!-- Language Toggle (Fades in immediately) -->
+        <div class="flex justify-end items-center mb-6 space-x-2 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-sm max-w-fit ml-auto animate-[fadeIn_1s_ease-out]">
+            <span data-i18n="langLabel" class="text-xs font-bold text-gray-500 uppercase tracking-wider ml-2">Language:</span>
+            <button id="btn-en" onclick="switchLang('en')" class="px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-pink-500 text-white shadow-sm hover:scale-105">EN</button>
+            <button id="btn-zh" onclick="switchLang('zh')" class="px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-105">中文</button>
         </div>
 
-        <fieldset class="field">
-          <legend data-i18n="dietLegend">Any dietary needs in your group?</legend>
-          <p class="hint" data-i18n="dietHint">Tick any that apply.</p>
-          <div class="chips">
-            <label class="choice"><input type="checkbox" name="diet" value="Vegetarian"><span data-i18n="veg">Vegetarian</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="Halal"><span data-i18n="halal">Halal</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="No beef"><span data-i18n="noBeef">No beef</span></label>
-            <label class="choice"><input type="checkbox" name="diet" value="No pork"><span data-i18n="noPork">No pork</span></label>
-          </div>
-        </fieldset>
+        <!-- Main Invitation Card -->
+        <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border-4 border-pink-100 animate-[slideUp_0.8s_ease-out]">
+            
+            <!-- Header Section -->
+            <div class="bg-gradient-to-br from-pink-200 via-purple-100 to-blue-200 p-10 text-center relative overflow-hidden group">
+                <!-- Subtle moving gradient background effect -->
+                <div class="absolute inset-0 bg-white/30 transition-opacity duration-700 group-hover:opacity-10"></div>
+                
+                <div class="relative z-10">
+                    <span data-i18n="badge" class="inline-block px-5 py-1.5 rounded-full bg-white/90 text-pink-600 font-bold text-sm tracking-widest shadow-sm mb-6 transform transition hover:-translate-y-1">
+                        You Are Cordially Invited
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-display font-bold text-gray-800 mb-4 leading-tight transition-transform duration-500 hover:scale-105">
+                        <span data-i18n="title" class="block text-pink-500 drop-shadow-sm">Baby Han Yu's</span>
+                        <span data-i18n="chineseTitle" class="block text-2xl md:text-3xl mt-2 text-gray-600">涵钰宝宝百日宴</span>
+                    </h1>
+                    <div class="mt-6 inline-block transform -rotate-3 transition-transform duration-300 hover:rotate-0">
+                        <span data-i18n="ageBadge" class="soft-pulse inline-block bg-yellow-400 text-yellow-900 font-bold px-8 py-3 rounded-2xl shadow-lg text-xl border-2 border-yellow-300">
+                            100 Days! 🎉
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="field">
-          <label for="notes" data-i18n="notesLabel">Allergies or anything else we should know?</label>
-          <input type="text" id="notes" name="notes" maxlength="300">
+            <div class="p-6 md:p-10">
+                <!-- Intro Message -->
+                <div class="reveal">
+                    <p data-i18n="subtitle" class="text-center text-gray-600 text-lg leading-relaxed mb-10 max-w-lg mx-auto font-medium">
+                        100 days of giggles, love, and sweet memories! Join us as we celebrate this special milestone for our baby Han Yu.
+                    </p>
+                </div>
+
+                <!-- Event Details Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+                    <!-- Date -->
+                    <div class="reveal delay-100 bg-gradient-to-b from-blue-50 to-white p-5 rounded-2xl text-center border border-blue-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow text-2xl transition-transform duration-300 hover:rotate-12">📅</div>
+                        <h3 data-i18n="dateTitle" class="font-bold text-blue-900 mb-2 uppercase tracking-wide text-xs">Date</h3>
+                        <p data-i18n="dateValue" class="text-blue-800 text-sm font-bold">Saturday,<br>November 7, 2026</p>
+                    </div>
+                    <!-- Time -->
+                    <div class="reveal delay-200 bg-gradient-to-b from-purple-50 to-white p-5 rounded-2xl text-center border border-purple-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow text-2xl transition-transform duration-300 hover:-rotate-12">⏰</div>
+                        <h3 data-i18n="timeTitle" class="font-bold text-purple-900 mb-2 uppercase tracking-wide text-xs">Time</h3>
+                        <p data-i18n="timeValue" class="text-purple-800 text-sm font-bold">11:00 AM Onward</p>
+                    </div>
+                    <!-- Venue -->
+                    <div class="reveal delay-300 bg-gradient-to-b from-pink-50 to-white p-5 rounded-2xl text-center border border-pink-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow text-2xl transition-transform duration-300 hover:scale-110">📍</div>
+                        <h3 data-i18n="venueTitle" class="font-bold text-pink-900 mb-2 uppercase tracking-wide text-xs">Location</h3>
+                        <p data-i18n="venueValue" class="text-pink-800 text-sm font-bold mb-3 leading-snug">Clubhouse Function Room (E1)<br>Rivercove Residences<br><span class="font-normal text-xs">Anchorvale Lane, Singapore 544584</span></p>
+                        <!-- Google Maps Button -->
+                        <a href="https://maps.app.goo.gl/boYQVNCdkrrbjmGj9" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-4 py-1.5 bg-pink-500 text-white text-xs font-bold rounded-lg hover:bg-pink-600 transition-colors shadow-sm active:scale-95">
+                            <span data-i18n="mapBtn">Open Map</span> 🗺️
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Getting There: site plan, parking, trains -->
+                <div class="reveal bg-gray-50/80 rounded-3xl p-4 md:p-8 mb-12 border border-gray-100 shadow-inner">
+                    <h3 data-i18n="gettingThereTitle" class="font-display text-3xl text-center text-gray-800 mb-6 font-bold">Getting There</h3>
+                    <figure>
+                        <div class="map">
+                            <img src="site-plan-entrance.webp" width="480" height="400"
+                                 alt="Site plan of the Rivercove entrance. The guard house (A) is on Anchorvale Lane; the clubhouse function room (E1) is just past the entrance court, beside the family pool.">
+                            <span class="pin left" style="--x:6.9%;--y:45.5%;--c:#8b5cf6"><b data-i18n="pinGate">Guard house</b></span>
+                            <span class="pin room" style="--x:34%;--y:21.8%;--c:#ec4899"><b data-i18n="pinRoom">Function room</b></span>
+                        </div>
+                        <figcaption class="text-sm text-gray-600 mt-3 leading-relaxed">
+                            <span data-i18n="mapCaption">Enter at the guard house (A) on Anchorvale Lane. The clubhouse (E) is just past the entrance court (B), beside the family pool, and the function room is E1.</span>
+                            <a href="site-plan.webp" target="_blank" rel="noopener" class="font-bold text-pink-600 underline" data-i18n="fullPlan">See the full site plan</a>
+                        </figcaption>
+                    </figure>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-white p-5 rounded-2xl border border-pink-100 shadow-sm">
+                            <h4 class="font-bold text-pink-600 text-lg mb-1">🚗 <span data-i18n="drivingTitle">Driving</span></h4>
+                            <p data-i18n="drivingText" class="text-sm text-gray-600 leading-relaxed">Guest parking is available. Let the guard know you're going to the Clubhouse Function Room.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-purple-100 shadow-sm">
+                            <h4 class="font-bold text-purple-600 text-lg mb-1">🚆 <span data-i18n="trainTitle">By train</span></h4>
+                            <p data-i18n="trainText" class="text-sm text-gray-600 leading-relaxed">Nearest LRT: Tongkang (SW7, Sengkang LRT West Loop).<br>Nearest MRT: Sengkang (NE16, North East Line), then change to the LRT.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Section -->
+                <div class="reveal bg-gray-50/80 rounded-3xl p-8 mb-12 border border-gray-100 shadow-inner">
+                    <h3 data-i18n="scheduleTitle" class="font-display text-3xl text-center text-gray-800 mb-8 font-bold">Party Schedule</h3>
+                    <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-pink-200 before:via-purple-200 before:to-transparent">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-pink-400 text-white shadow-md shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-sm font-bold transition-transform duration-300 group-hover:scale-110">
+                                11:30
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-2xl shadow-sm bg-white border border-pink-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+                                <h4 data-i18n="sched1Title" class="font-bold text-pink-600 text-xl">Celebratory Lunch Buffet</h4>
+                                <p data-i18n="sched1Desc" class="text-sm text-gray-500 mt-2 leading-relaxed">Delicious feast & dessert station.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-white bg-purple-400 text-white shadow-md shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-sm font-bold transition-transform duration-300 group-hover:scale-110">
+                                12:30
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-2xl shadow-sm bg-white border border-purple-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+                                <h4 data-i18n="sched2Title" class="font-bold text-purple-600 text-xl">100th Day Blessing Ceremony</h4>
+                                <p data-i18n="sched2Desc" class="text-sm text-gray-500 mt-2 leading-relaxed">Han Yu's grand entry, cake cutting & photo taking.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="reveal flex items-center justify-center gap-4 mb-10 opacity-50">
+                    <div class="h-px bg-gray-300 w-16"></div>
+                    <span class="text-2xl">✨</span>
+                    <div class="h-px bg-gray-300 w-16"></div>
+                </div>
+
+                <!-- RSVP Section -->
+                <div class="reveal text-center mb-8">
+                    <span data-i18n="rsvpBadge" class="bg-gray-100 text-gray-600 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                        Kindly Reply by Nov 1, 2026
+                    </span>
+                    <h2 data-i18n="rsvpTitle" class="font-display text-4xl font-bold text-gray-800 mt-5 mb-2">RSVP Form</h2>
+                </div>
+
+                <!-- Form Section -->
+                <div id="formContainer" class="reveal delay-100">
+                    <form id="rsvpForm" onsubmit="handleFormSubmit(event)" class="space-y-6 max-w-md mx-auto">
+                        
+                        <!-- Guest Name -->
+                        <div class="group">
+                            <label data-i18n="nameLabel" for="name" class="block text-sm font-bold text-gray-700 mb-1.5 transition-colors group-focus-within:text-pink-600">Your Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-4 focus:ring-pink-100 focus:border-pink-400 outline-none transition-all duration-300 bg-gray-50/50 hover:bg-gray-50" placeholder="e.g. Bob & Family" data-i18n-placeholder="namePlaceholder">
+                        </div>
+                        
+                        <!-- Attendance Radio Toggle -->
+                        <div>
+                            <label data-i18n="attendLabel" class="block text-sm font-bold text-gray-700 mb-2">Will you attend? *</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="attendance" value="Joyfully Attending" required onchange="toggleGuestFields()" class="radio-custom sr-only peer">
+                                    <div class="p-4 text-center rounded-xl border-2 border-gray-100 bg-gray-50/50 peer-checked:border-pink-500 peer-checked:bg-pink-50 peer-checked:text-pink-700 peer-checked:shadow-md font-bold text-sm transition-all duration-300 hover:border-pink-300">
+                                        <span data-i18n="attendYes">🎉 Joyfully Attending!</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="attendance" value="Regretfully Declining" required onchange="toggleGuestFields()" class="radio-custom sr-only peer">
+                                    <div class="p-4 text-center rounded-xl border-2 border-gray-100 bg-gray-50/50 peer-checked:border-purple-500 peer-checked:bg-purple-50 peer-checked:text-purple-700 peer-checked:shadow-md font-bold text-sm transition-all duration-300 hover:border-purple-300">
+                                        <span data-i18n="attendNo">💌 Regretfully Declining</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Guest Count (Dynamically Shown) -->
+                        <div id="guestsDiv" class="hidden overflow-hidden transition-all duration-500 opacity-0 h-0">
+                            <label data-i18n="guestsLabel" for="guests" class="block text-sm font-bold text-gray-700 mb-1.5 mt-2">Total Number of Attending Guests</label>
+                            <select id="guests" name="guests" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-4 focus:ring-pink-100 focus:border-pink-400 outline-none transition-all duration-300 bg-gray-50/50 cursor-pointer hover:bg-gray-50">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6+">6+</option>
+                            </select>
+                        </div>
+
+                        <!-- Dietary (Dynamically Shown) -->
+                        <div id="dietaryDiv" class="hidden overflow-hidden transition-all duration-500 opacity-0 h-0">
+                            <label data-i18n="dietLabel" for="dietary" class="block text-sm font-bold text-gray-700 mb-1.5 mt-2">Dietary Preferences / Allergies</label>
+                            <input type="text" id="dietary" name="dietary" maxlength="100" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-4 focus:ring-pink-100 focus:border-pink-400 outline-none transition-all duration-300 bg-gray-50/50 hover:bg-gray-50" placeholder="e.g. Vegetarian, Halal, Nut Allergy" data-i18n-placeholder="dietPlaceholder">
+                        </div>
+
+                        <!-- Blessings with AI Gen Button -->
+                        <div class="group">
+                            <div class="flex justify-between items-end mb-1.5">
+                                <label data-i18n="messageLabel" for="message" class="block text-sm font-bold text-gray-700 transition-colors group-focus-within:text-purple-600">Blessings for Baby Han Yu</label>
+                                <button type="button" onclick="generateWishes()" id="aiBtn" class="shimmer text-xs text-white px-3 py-1.5 rounded-lg font-bold shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-1.5">
+                                    ✨ <span data-i18n="aiGenerateBtn">AI Magic Wish</span>
+                                </button>
+                            </div>
+                            <textarea id="message" name="message" rows="3" maxlength="170" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-4 focus:ring-purple-100 focus:border-purple-400 outline-none transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 resize-none" placeholder="Write a warm note for baby Han Yu..." data-i18n-placeholder="messagePlaceholder"></textarea>
+                        </div>
+
+                        <!-- Email (optional): the Sheet script sends a confirmation with all the details -->
+                        <div class="group">
+                            <label data-i18n="emailLabel" for="email" class="block text-sm font-bold text-gray-700 mb-1.5 transition-colors group-focus-within:text-pink-600">Email (optional, for a confirmation)</label>
+                            <input type="email" id="email" name="email" maxlength="120" autocomplete="email" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:ring-4 focus:ring-pink-100 focus:border-pink-400 outline-none transition-all duration-300 bg-gray-50/50 hover:bg-gray-50" placeholder="e.g. bob@example.com" data-i18n-placeholder="emailPlaceholder">
+                        </div>
+
+                        <!-- Hidden from people; bots that fill it in are sent to the Sheet's Spam tab -->
+                        <div style="position:absolute;left:-9999px" aria-hidden="true">
+                            <label>Leave this empty <input type="text" id="hp_check" name="hp_check" tabindex="-1" autocomplete="off"></label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-pink-400 via-pink-500 to-purple-500 bg-size-200 hover:bg-right-bottom text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl text-lg relative overflow-hidden group/btn">
+                            <span class="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+                            <span class="relative z-10" data-i18n="submitBtn">Send RSVP ✨</span>
+                        </button>
+                        <p id="formError" role="alert" class="text-center text-sm font-bold text-red-600"></p>
+                    </form>
+                </div>
+
+                <!-- Success Message Section (Hidden by default) -->
+                <div id="successContainer" class="hidden text-center py-10 space-y-5 animate-[fadeIn_0.5s_ease-out]">
+                    <div class="text-7xl mb-6 float-medium inline-block">🎉</div>
+                    <h3 data-i18n="successTitle" class="text-4xl font-display font-bold text-gray-800">RSVP Received!</h3>
+                    <p id="successText" class="text-gray-600 text-xl px-4 leading-relaxed"></p>
+                    <p id="successEmail" class="hidden text-gray-500 text-base px-4"></p>
+                    <p id="successUnit" class="hidden text-gray-600 text-base leading-relaxed bg-pink-50 rounded-2xl px-5 py-3 max-w-md mx-auto"></p>
+                    <button onclick="resetForm()" class="mt-8 px-6 py-2 rounded-full border-2 border-pink-200 text-pink-600 font-bold hover:bg-pink-50 transition-colors duration-300">
+                        <span data-i18n="resetFormText">Submit another response</span>
+                    </button>
+                </div>
+
+            </div>
         </div>
-      </fieldset>
+        
+        <p class="text-center text-gray-400 mt-10 mb-4 text-sm font-medium transition-opacity duration-1000" id="footerText">
+            <span data-i18n="footerText">Made with ❤️ for Baby Han Yu (涵钰) • Hosted with love by Adela &amp; Family</span>
+        </p>
+    </div>
 
-      <div class="field">
-        <label for="email" data-i18n="emailLabel">Email (optional)</label>
-        <p class="hint" data-i18n="emailHint">We'll send you a confirmation with all the details.</p>
-        <input type="email" id="email" name="email" maxlength="120" autocomplete="email">
-      </div>
+    <script>
+        // --- Translations Dictionary ---
+        const translations = {
+            en: {
+                langLabel: "Language:",
+                badge: "You Are Cordially Invited",
+                title: "Baby Han Yu's",
+                chineseTitle: "涵钰宝宝百日宴",
+                ageBadge: "100 Days! 🎉",
+                subtitle: "100 days of giggles, love, and sweet memories! Join us as we celebrate this special milestone for our baby Han Yu.",
+                dateTitle: "Date",
+                dateValue: "Saturday,<br>November 7, 2026",
+                timeTitle: "Time",
+                timeValue: "11:00 AM Onward",
+                venueTitle: "Location",
+                venueValue: "Clubhouse Function Room (E1)<br>Rivercove Residences<br><span class='font-normal text-xs'>Anchorvale Lane, Singapore 544584</span>",
+                mapBtn: "Open Map",
+                gettingThereTitle: "Getting There",
+                pinGate: "Guard house",
+                pinRoom: "Function room",
+                mapCaption: "Enter at the guard house (A) on Anchorvale Lane. The clubhouse (E) is just past the entrance court (B), beside the family pool, and the function room is E1.",
+                fullPlan: "See the full site plan",
+                drivingTitle: "Driving",
+                drivingText: "Guest parking is available. Let the guard know you're going to the Clubhouse Function Room.",
+                trainTitle: "By train",
+                trainText: "Nearest LRT: Tongkang (SW7, Sengkang LRT West Loop).<br>Nearest MRT: Sengkang (NE16, North East Line), then change to the LRT.",
+                scheduleTitle: "Party Schedule",
+                sched1Title: "Celebratory Lunch Buffet",
+                sched1Desc: "Delicious feast & dessert station.",
+                sched2Title: "100th Day Blessing Ceremony",
+                sched2Desc: "Han Yu's grand entry, cake cutting & photo taking.",
+                rsvpBadge: "Kindly Reply by Nov 1, 2026",
+                rsvpTitle: "RSVP Form",
+                nameLabel: "Your Full Name *",
+                namePlaceholder: "e.g. Bob & Family",
+                attendLabel: "Will you attend? *",
+                attendYes: "🎉 Joyfully Attending!",
+                attendNo: "💌 Regretfully Declining",
+                guestsLabel: "Total Number of Attending Guests",
+                dietLabel: "Dietary Preferences / Allergies",
+                dietPlaceholder: "e.g. Vegetarian, Halal, Nut Allergy",
+                messageLabel: "Blessings for Baby Han Yu",
+                messagePlaceholder: "Write a warm note for baby Han Yu...",
+                aiGenerateBtn: "AI Magic Wish",
+                aiGenerating: "Generating...",
+                submitBtn: "Send RSVP ✨",
+                emailLabel: "Email (optional, for a confirmation)",
+                emailPlaceholder: "e.g. bob@example.com",
+                successEmailed: "A confirmation is on its way to {email}.",
+                successNotEmailed: "We couldn't send the confirmation email, but your RSVP is saved.",
+                sending: "Sending…",
+                sendFailed: "Your RSVP didn't send. Please check your internet connection and try again.",
+                successTitle: "RSVP Received!",
+                successUnit: "Driving? Tell the guard you're going to the Clubhouse Function Room. If they ask for a unit, you're visiting {unit}.",
+                successAttending: "Yay, <strong>{name}</strong>! We can't wait to celebrate with you on November 7th! 🎉",
+                successDeclining: "Thank you for letting us know, <strong>{name}</strong>. We'll miss you, but thank you for your warm wishes! 💖",
+                resetFormText: "Submit another response",
+                footerText: "Made with ❤️ for Baby Han Yu (涵钰) • Hosted with love by Adela & Family"
+            },
+            zh: {
+                langLabel: "语言选择:",
+                badge: "诚挚邀请您的光临",
+                title: "涵钰宝宝百日宴",
+                chineseTitle: "", 
+                ageBadge: "百日之喜！🎉",
+                subtitle: "百天成长，满载欢笑与关爱！诚邀您一同分享我们宝贝涵钰这充满喜悦与祝福的百日里程碑。",
+                dateTitle: "举办日期",
+                dateValue: "2026年11月7日<br>星期六",
+                timeTitle: "活动时间",
+                timeValue: "11:00 AM 开始",
+                venueTitle: "宴会地点",
+                venueValue: "Clubhouse Function Room (E1)<br>Rivercove Residences<br><span class='font-normal text-xs'>Anchorvale Lane, Singapore 544584</span>",
+                mapBtn: "打开地图",
+                gettingThereTitle: "交通指南",
+                pinGate: "保安亭",
+                pinRoom: "功能厅",
+                mapCaption: "从 Anchorvale Lane 的保安亭 (A) 进去，经过入口广场 (B)，会所 (E) 就在家庭泳池旁边，功能厅是 E1。",
+                fullPlan: "查看完整平面图",
+                drivingTitle: "驾车前来",
+                drivingText: "公寓有访客停车位。到了门口，跟保安说您要去会所功能厅（Clubhouse Function Room）就可以了。",
+                trainTitle: "搭地铁／轻轨",
+                trainText: "最近的轻轨站：同港站 Tongkang（SW7，盛港轻轨）。<br>最近的地铁站：盛港站 Sengkang（NE16，东北线），在那里转搭轻轨就到。",
+                scheduleTitle: "百日宴流程表",
+                sched1Title: "丰盛庆祝午宴",
+                sched1Desc: "精致自助午宴与甜品台。",
+                sched2Title: "百日祈福仪式",
+                sched2Desc: "涵钰宝宝闪亮登场、切百日蛋糕与合影留念。",
+                rsvpBadge: "请于 2026年11月1日前回复",
+                rsvpTitle: "出席敬请回复",
+                nameLabel: "您的姓名 *",
+                namePlaceholder: "例如：张明 及 家人",
+                attendLabel: "您是否出席？*",
+                attendYes: "🎉 欣然出席庆祝！",
+                attendNo: "💌 遗憾无法前往",
+                guestsLabel: "预计出席总人数",
+                dietLabel: "饮食偏好或过敏源",
+                dietPlaceholder: "例如：素食、清真、花生过敏等",
+                messageLabel: "给涵钰宝宝的祝福语",
+                messagePlaceholder: "请留下对涵钰宝宝的美好祝福...",
+                aiGenerateBtn: "AI 帮我写祝福",
+                aiGenerating: "生成中...",
+                submitBtn: "提交 RSVP ✨",
+                emailLabel: "电邮（选填，用于接收确认邮件）",
+                emailPlaceholder: "例如：name@example.com",
+                successEmailed: "确认邮件已发到 {email}。",
+                successNotEmailed: "确认邮件没能发出，不过您的回复我们已经收到了。",
+                sending: "提交中…",
+                sendFailed: "回复没能送出，请检查网络后再试一次。",
+                successTitle: "回复已成功记录！",
+                successUnit: "驾车前来的话，跟保安说您要去会所功能厅（Clubhouse Function Room）。如果保安问门牌，就说是来 {unit} 的。",
+                successAttending: "太棒了，<strong>{name}</strong>！我们迫不及待想在11月7日与您欢聚庆祝！🎉",
+                successDeclining: "非常感谢您的告知，<strong>{name}</strong>。虽然您无法亲临，但您的祝福我们已收到！💖",
+                resetFormText: "提交另一条回复",
+                footerText: "用 ❤️ 守护涵钰宝宝 • Adela 及全家敬邀"
+            }
+        };
 
-      <div class="hp" aria-hidden="true">
-        <label>Leave this empty <input type="text" name="hp_check" tabindex="-1" autocomplete="off"></label>
-      </div>
+        let currentLang = 'en';
 
-      <button class="send" type="submit">Send RSVP</button>
-      <p class="error" id="error" role="alert"></p>
-    </form>
-  </section>
+        // --- Interaction Logic ---
+        
+        // Scroll Reveal Logic
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50; // threshold
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", revealOnScroll);
+        // Trigger once on load to show elements initially in view
+        setTimeout(revealOnScroll, 100);
 
-  <section class="sheet thanks" id="thanks" hidden tabindex="-1">
-    <h2 id="t-title"></h2>
-    <p id="t-body"></p>
-    <p class="note" id="t-unit"></p>
-    <p id="t-email"></p>
-    <button type="button" class="link-btn" id="again" data-i18n="again">Change my RSVP</button>
-  </section>
-</main>
+        function switchLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en'; // picks proper Chinese glyphs
+            
+            // Animate buttons
+            const btnEn = document.getElementById('btn-en');
+            const btnZh = document.getElementById('btn-zh');
+            
+            if(lang === 'en') {
+                btnEn.className = "px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-pink-500 text-white shadow-sm scale-105";
+                btnZh.className = "px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200";
+            } else {
+                btnEn.className = "px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200";
+                btnZh.className = "px-3 py-1 text-xs font-bold rounded-full transition-all duration-300 bg-pink-500 text-white shadow-sm scale-105";
+            }
 
-<div id="confetti" aria-hidden="true"></div>
+            // Animate text change (fade out, update, fade in)
+            document.querySelectorAll('[data-i18n], [data-i18n-placeholder]').forEach(el => {
+                el.style.opacity = '0'; // Fade out
+            });
 
-<script>
-  // Paste the Google Apps Script web app URL (ends in /exec) here after deploying.
-  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbweOccw93RNNESIbX5_5XWifKBWZ91LpkbA4Ol1kOWHiaOiQYRZOnXGpsrpFotM6sV4/exec';
+            setTimeout(() => {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang][key] !== undefined) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                    el.style.transition = 'opacity 0.3s ease';
+                    el.style.opacity = '1'; // Fade in
+                });
 
-  // Static text carries data-i18n keys; its English is read from the page itself, so only Chinese lives here.
-  const ZH = {
-    title: '涵钰百日宴，诚邀您光临',
-    invite: '我们家宝贝满',
-    days: '天啦！',
-    welcome: '诚邀您来参加涵钰的百日宴，一起吃顿饭、热闹一下！',
-    details: '宴会详情',
-    when: '时间',
-    whenText: '2026年11月7日（星期六）<br>上午11点半开始',
-    where: '地点',
-    maps: '打开 Google 地图',
-    finding: '怎么找到功能厅',
-    mapAlt: 'Rivercove 入口平面图。保安亭 (A) 在 Anchorvale Lane 上；会所功能厅 (E1) 在入口广场后面，家庭泳池旁边。',
-    pinGate: '保安亭',
-    pinRoom: '功能厅',
-    caption: '从 Anchorvale Lane 的保安亭 (A) 进去，经过入口广场 (B)，会所 (E) 就在家庭泳池旁边，功能厅是 E1。',
-    fullPlan: '查看完整平面图',
-    driving: '驾车前来',
-    drivingText: '公寓有访客停车位。到了门口，跟保安说您要去会所功能厅（Clubhouse Function Room）就可以了。',
-    train: '搭地铁／轻轨',
-    lrt: '最近的轻轨站：同港站 Tongkang（SW7，盛港轻轨）。',
-    mrt: '最近的地铁站：盛港站 Sengkang（NE16，东北线），在那里转搭轻轨就到。',
-    rsvpTitle: '敬请回复',
-    replyBy: '请于10月30日（星期五）前回复，方便我们安排。',
-    nameLabel: '您的姓名',
-    attendLegend: '是否出席？',
-    optYes: '会，一定到！',
-    optMaybe: '还不确定',
-    optNo: '很抱歉，无法出席',
-    countLabel: '出席人数（包括您自己）',
-    stepDown: '减少一位',
-    stepUp: '增加一位',
-    dietLegend: '有饮食禁忌吗？',
-    dietHint: '可多选。',
-    veg: '素食',
-    halal: '清真',
-    noBeef: '不吃牛肉',
-    noPork: '不吃猪肉',
-    notesLabel: '食物过敏或其他备注',
-    emailLabel: '电邮（选填）',
-    emailHint: '填写后，我们会把确认邮件和宴会详情发给您。',
-    again: '修改回复',
-    // Used from the script below
-    send: '提交回复',
-    sending: '提交中…',
-    failed: '没能提交成功，请检查网络后再点一次“提交回复”。',
-    invalid: '提交没有成功，请检查填写的内容再试一次。',
-    who: n => (n === 1 ? '您' : `您一行${n}位`),
-    Yes: (name, n) => ['11月7日见！', `谢谢${name}！我们已经为${ZH.who(n)}留好位子了。`],
-    Maybe: (name, n) => ['谢谢回复！', `我们先为${ZH.who(n)}留着位子，确定了再回复我们一次就好。`],
-    No: name => ['太可惜了！', `谢谢${name}告诉我们，下次再聚！`],
-    unit: u => `驾车前来的话，跟保安说您要去会所功能厅（Clubhouse Function Room）。如果保安问门牌，就说是来 ${u} 的。`,
-    emailed: e => `确认邮件已发到 ${e}。`,
-    notEmailed: '确认邮件没能发出，不过您的回复我们已经收到了。',
-  };
-  const EN = {
-    send: 'Send RSVP',
-    sending: 'Sending…',
-    failed: "Your RSVP didn't send. Check your internet connection and tap Send RSVP again.",
-    Yes: (name, n) => ['See you on 7 Nov!', `Thank you, ${name}. We've saved ${n === 1 ? 'a spot for you' : 'spots for your group of ' + n}.`],
-    Maybe: (name, n) => ['Thanks for letting us know!', `We've pencilled ${n === 1 ? 'you in' : 'in your group of ' + n}. When you know for sure, send your RSVP again.`],
-    No: name => ["We'll miss you!", `Thanks for letting us know, ${name}.`],
-    unit: u => `Driving? Tell the guard you're going to the Clubhouse Function Room. If they ask for a unit, you're visiting ${u}.`,
-    emailed: e => `A confirmation is on its way to ${e}.`,
-    notEmailed: "We couldn't send the confirmation email, but your RSVP is saved.",
-  };
-  let lang = 'en';
-  let lastThanks = null;
-  const tr = () => (lang === 'zh' ? ZH : EN);
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    if (translations[lang][key]) {
+                        el.placeholder = translations[lang][key];
+                    }
+                    el.style.transition = 'opacity 0.3s ease';
+                    el.style.opacity = '1';
+                });
+            }, 150); // wait for fade out
+        }
 
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const $ = id => document.getElementById(id);
-  const form = $('form');
+        // Animated Toggle for Form Fields
+        function toggleGuestFields() {
+            const selectedRadio = document.querySelector('input[name="attendance"]:checked');
+            const val = selectedRadio ? selectedRadio.value : '';
+            const guestsDiv = document.getElementById('guestsDiv');
+            const dietaryDiv = document.getElementById('dietaryDiv');
+            
+            if (val.includes('Attending') && !val.includes('Declining')) {
+                // Expand
+                guestsDiv.classList.remove('hidden');
+                dietaryDiv.classList.remove('hidden');
+                // Small delay to allow display:block to apply before animating opacity/height
+                setTimeout(() => {
+                    guestsDiv.classList.replace('opacity-0', 'opacity-100');
+                    guestsDiv.classList.replace('h-0', 'h-24'); // Approximate height
+                    dietaryDiv.classList.replace('opacity-0', 'opacity-100');
+                    dietaryDiv.classList.replace('h-0', 'h-24');
+                }, 10);
+            } else {
+                // Collapse
+                guestsDiv.classList.replace('opacity-100', 'opacity-0');
+                guestsDiv.classList.replace('h-24', 'h-0');
+                dietaryDiv.classList.replace('opacity-100', 'opacity-0');
+                dietaryDiv.classList.replace('h-24', 'h-0');
+                
+                // Wait for animation to finish before hiding
+                setTimeout(() => {
+                    guestsDiv.classList.add('hidden');
+                    dietaryDiv.classList.add('hidden');
+                }, 500); // matches transition duration
+            }
+        }
 
-  // Count up 0 -> 100 on load. Time-based, so it still lands on 100 if timers are throttled.
-  if (!reduce) {
-    const num = $('hundred'), t0 = Date.now(), dur = 1400;
-    num.textContent = '0';
-    const tick = setInterval(() => {
-      const p = Math.min(1, (Date.now() - t0) / dur);
-      num.textContent = Math.round(100 * (1 - Math.pow(1 - p, 3)));
-      if (p === 1) { clearInterval(tick); num.parentElement.classList.add('pop'); }
-    }, 30);
-  }
+        const sampleWishes = {
+            en: [
+                "Wishing baby Han Yu a lifetime of health, joy, and endless discoveries! Happy 100 days! 🍼✨",
+                "May little Han Yu grow up strong, happy, and surrounded by love. Congratulations on this 100-day milestone! 🧸💖",
+                "Happy 100 Days! May every day bring new smiles and wonderful adventures for baby Han Yu. 🎉",
+                "Sending all our love and blessings to baby Han Yu. Here's to a future filled with brightness and laughter! 🌟"
+            ],
+            zh: [
+                "祝涵钰宝宝百日快乐！愿你健康平安，快高长大，一生被爱包围！🍼✨",
+                "百日之喜！愿小涵钰无忧无虑，笑容常在，未来充满无限可能！🧸💖",
+                "恭喜涵钰宝宝满百天啦！愿你每天都像阳光一样灿烂，健康快乐地成长。🎉",
+                "送上最诚挚的祝福，愿涵钰宝宝一生幸福安康，平安顺遂！🌟"
+            ]
+        };
 
-  const i18n = [...document.querySelectorAll('[data-i18n]')];
-  i18n.forEach(el => { el.dataset.en = el.dataset.i18nAttr ? el.getAttribute(el.dataset.i18nAttr) : el.innerHTML; });
-  const enTitle = document.title;
+        function generateWishes() {
+            const btn = document.getElementById('aiBtn');
+            const textarea = document.getElementById('message');
+            const originalText = btn.innerHTML;
+            
+            // Animation state
+            btn.innerHTML = `⏳ <span data-i18n="aiGenerating">${translations[currentLang].aiGenerating}</span>`;
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'animate-pulse');
+            btn.classList.remove('shimmer');
 
-  function setLang(l) {
-    lang = l;
-    for (const el of i18n) {
-      const v = l === 'zh' ? ZH[el.dataset.i18n] : el.dataset.en;
-      if (el.dataset.i18nAttr) el.setAttribute(el.dataset.i18nAttr, v);
-      else el.innerHTML = v;
-    }
-    document.documentElement.lang = l === 'zh' ? 'zh-Hans' : 'en';
-    document.title = l === 'zh' ? ZH.title : enTitle;
-    document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
-    const btn = form.querySelector('.send');
-    if (!btn.disabled) btn.textContent = tr().send;
-    // Keep the choice in the address bar, so a refresh or a shared ?lang=zh link opens in Chinese.
-    history.replaceState(null, '', l === 'zh' ? '?lang=zh' : location.pathname);
-    if (lastThanks) renderThanks(...lastThanks);
-  }
-  document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-  if (new URLSearchParams(location.search).get('lang') === 'zh') setLang('zh');
+            setTimeout(() => {
+                const wishesArray = sampleWishes[currentLang];
+                const randomWish = wishesArray[Math.floor(Math.random() * wishesArray.length)];
+                
+                // Typewriter effect animation for the textarea
+                textarea.value = '';
+                let i = 0;
+                function typeWriter() {
+                    if (i < randomWish.length) {
+                        textarea.value += randomWish.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 20); // typing speed
+                    } else {
+                        // Reset button
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        btn.classList.remove('opacity-75', 'animate-pulse');
+                        btn.classList.add('shimmer');
+                    }
+                }
+                typeWriter();
 
-  // Hide party size and dietary questions for a "no".
-  form.addEventListener('change', e => {
-    if (e.target.name === 'attending') $('going').hidden = $('going').disabled = e.target.value === 'No';
-  });
+            }, 600); // Fake API delay
+        }
 
-  document.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => {
-    const c = $('count');
-    c.value = Math.min(20, Math.max(1, (parseInt(c.value, 10) || 1) + Number(b.dataset.step)));
-  }));
+        // Google Apps Script web app that saves each RSVP to the Google Sheet.
+        const ENDPOINT = 'https://script.google.com/macros/s/AKfycbweOccw93RNNESIbX5_5XWifKBWZ91LpkbA4Ol1kOWHiaOiQYRZOnXGpsrpFotM6sV4/exec';
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    const data = {
-      name: fd.get('name'), attending: fd.get('attending'), count: fd.get('count') || 0,
-      diet: fd.getAll('diet'), notes: fd.get('notes') || '', email: fd.get('email'), hp_check: fd.get('hp_check'),
-    };
-    const btn = form.querySelector('.send');
-    $('error').textContent = '';
-    btn.disabled = true;
-    btn.textContent = tr().sending;
-    try {
-      if (!ENDPOINT) throw new Error('ENDPOINT not set');
-      // A string body is sent as text/plain, which Apps Script accepts without a CORS preflight.
-      const res = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(data) });
-      const out = await res.json();
-      if (out.ok) showThanks(data, out);
-      else $('error').textContent = lang === 'zh' ? ZH.invalid : out.error;
-    } catch (err) {
-      $('error').textContent = tr().failed;
-    } finally {
-      btn.disabled = false;
-      btn.textContent = tr().send;
-    }
-  });
+        // The Sheet script expects the first version's fields (see apps-script/Code.gs),
+        // so this form's answers are mapped onto them here rather than changing the Sheet.
+        function toSheetPayload(isAttending) {
+            const guests = document.getElementById('guests').value;
+            const dietary = document.getElementById('dietary').value.trim();
+            const message = document.getElementById('message').value.trim();
+            // ponytail: keyword match so the Sheet's dietary tallies keep working; the full text still goes in notes.
+            const diet = [
+                [/vegetarian|素/i, 'Vegetarian'],
+                [/halal|清真/i, 'Halal'],
+                [/beef|牛肉/i, 'No beef'],
+                [/pork|猪肉/i, 'No pork'],
+            ].filter(([re]) => re.test(dietary)).map(([, v]) => v);
+            const notes = [dietary, guests === '6+' ? '6+ guests' : '', message ? 'Blessing: ' + message : '']
+                .filter(Boolean).join(' | ');
+            return {
+                name: document.getElementById('name').value,
+                attending: isAttending ? 'Yes' : 'No',
+                count: parseInt(guests, 10) || 1,
+                diet,
+                notes,
+                email: document.getElementById('email').value.trim(),
+                hp_check: document.getElementById('hp_check').value,
+            };
+        }
 
-  function renderThanks(d, out) {
-    const t = tr();
-    const [title, body] = t[d.attending](d.name.trim(), Number(d.count) || 1);
-    $('t-title').textContent = title;
-    $('t-body').textContent = body;
-    $('t-unit').textContent = out.unit ? t.unit(out.unit.replace(/ /g, '\u00a0')) : '';
-    $('t-email').textContent = !d.email ? '' : out.emailed ? t.emailed(d.email) : t.notEmailed;
-  }
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const selectedRadio = document.querySelector('input[name="attendance"]:checked');
+            const attendance = selectedRadio ? selectedRadio.value : '';
 
-  function showThanks(d, out) {
-    lastThanks = [d, out];
-    renderThanks(d, out);
-    $('rsvp').hidden = true;
-    $('thanks').hidden = false;
-    $('thanks').focus();
-    $('thanks').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-    if (d.attending !== 'No') confetti();
-  }
+            const isAttending = attendance.includes('Attending') && !attendance.includes('Declining');
 
-  $('again').addEventListener('click', () => {
-    lastThanks = null;
-    $('thanks').hidden = true;
-    $('rsvp').hidden = false;
-    $('rsvp').scrollIntoView({ block: 'start' });
-  });
+            const btn = e.target.querySelector('button[type="submit"]');
+            const btnLabel = btn.querySelector('[data-i18n="submitBtn"]');
+            const errorEl = document.getElementById('formError');
+            errorEl.textContent = '';
+            btn.disabled = true;
+            btnLabel.textContent = translations[currentLang].sending;
+            let out = null;
+            try {
+                // A string body is sent as text/plain, which Apps Script accepts without a CORS preflight.
+                const res = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(toSheetPayload(isAttending)) });
+                out = await res.json();
+            } catch (err) {
+                out = null;
+            }
+            btn.disabled = false;
+            btnLabel.innerHTML = translations[currentLang].submitBtn;
+            if (!out || !out.ok) {
+                // Keep everything the guest typed; they can just tap Send again.
+                errorEl.textContent = out && out.error && currentLang === 'en' ? out.error : translations[currentLang].sendFailed;
+                return;
+            }
 
-  function confetti() {
-    if (reduce) return;
-    const box = $('confetti');
-    const colors = ['#D7192A', '#FFC93C', '#0B7D62', '#FF9EB5', '#FF8A1F'];
-    for (let i = 0; i < 90; i++) {
-      const s = document.createElement('i');
-      s.style.cssText = `left:${Math.random() * 100}%;background:${colors[i % colors.length]};` +
-        `--dx:${(Math.random() - .5) * 180}px;--rot:${Math.random() * 720 - 360}deg;` +
-        `animation-duration:${2.2 + Math.random() * 1.6}s;animation-delay:${Math.random() * .5}s;` +
-        (i % 3 === 0 ? 'border-radius:50%;width:10px;height:10px;' : '');
-      box.appendChild(s);
-    }
-    setTimeout(() => box.replaceChildren(), 4800);
-  }
-</script>
+            const email = document.getElementById('email').value.trim();
+            const emailEl = document.getElementById('successEmail');
+            emailEl.textContent = !email ? ''
+                : out.emailed ? translations[currentLang].successEmailed.replace('{email}', email)
+                : translations[currentLang].successNotEmailed;
+            emailEl.classList.toggle('hidden', !emailEl.textContent);
+
+            const unitEl = document.getElementById('successUnit');
+            unitEl.textContent = isAttending && out.unit ? translations[currentLang].successUnit.replace('{unit}', out.unit) : '';
+            unitEl.classList.toggle('hidden', !unitEl.textContent);
+
+            const successTemplate = translations[currentLang][isAttending ? 'successAttending' : 'successDeclining'];
+            const formattedMsg = successTemplate.replace('{name}', escapeHtml(name));
+
+            // Animate Out Form
+            const formContainer = document.getElementById('formContainer');
+            formContainer.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            formContainer.style.opacity = '0';
+            formContainer.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                formContainer.classList.add('hidden');
+                
+                // Animate In Success
+                const successContainer = document.getElementById('successContainer');
+                document.getElementById('successText').innerHTML = formattedMsg;
+                successContainer.classList.remove('hidden');
+                
+                // Trigger confetti effect if attending (optional visual enhancement)
+                if(isAttending) {
+                    createConfetti();
+                }
+            }, 400);
+        }
+
+        function resetForm() {
+            const successContainer = document.getElementById('successContainer');
+            successContainer.classList.add('hidden');
+            
+            const formContainer = document.getElementById('formContainer');
+            document.getElementById('rsvpForm').reset();
+            document.getElementById('formError').textContent = '';
+            
+            // Reset dynamic fields securely
+            const guestsDiv = document.getElementById('guestsDiv');
+            const dietaryDiv = document.getElementById('dietaryDiv');
+            guestsDiv.classList.add('hidden');
+            guestsDiv.classList.replace('opacity-100', 'opacity-0');
+            guestsDiv.classList.replace('h-24', 'h-0');
+            dietaryDiv.classList.add('hidden');
+            dietaryDiv.classList.replace('opacity-100', 'opacity-0');
+            dietaryDiv.classList.replace('h-24', 'h-0');
+
+            formContainer.classList.remove('hidden');
+            // Animate back in
+            setTimeout(() => {
+                formContainer.style.opacity = '1';
+                formContainer.style.transform = 'translateY(0)';
+            }, 50);
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // Simple lightweight confetti for success state
+        function createConfetti() {
+            const colors = ['#fbcfe8', '#e9d5ff', '#bfdbfe', '#fef08a'];
+            for(let i=0; i<30; i++) {
+                const confetto = document.createElement('div');
+                confetto.style.position = 'fixed';
+                confetto.style.width = '10px';
+                confetto.style.height = '10px';
+                confetto.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetto.style.left = Math.random() * 100 + 'vw';
+                confetto.style.top = '-10px';
+                confetto.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetto.style.zIndex = '9999';
+                confetto.style.pointerEvents = 'none';
+                
+                // Random animation properties
+                const duration = Math.random() * 2 + 2; // 2-4s
+                const delay = Math.random() * 0.5;
+                
+                confetto.animate([
+                    { transform: `translate3d(0,0,0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate3d(${Math.random()*100 - 50}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    delay: delay * 1000,
+                    easing: 'cubic-bezier(.37,0,.63,1)',
+                    fill: 'forwards'
+                });
+                
+                document.body.appendChild(confetto);
+                setTimeout(() => confetto.remove(), (duration + delay) * 1000);
+            }
+        }
+
+        if (new URLSearchParams(location.search).get('lang') === 'zh') switchLang('zh');
+    </script>
 </body>
 </html>
